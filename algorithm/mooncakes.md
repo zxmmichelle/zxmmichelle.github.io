@@ -76,3 +76,46 @@ public static List<int[]> loop(int m, int n, int[] cakeSequence, int currentIndx
     }
 }
 ```
+
+- Finally, there is main function!
+```java
+public static void main(String[] args) {
+    // TODO Auto-generated method stub
+    Scanner sc = new Scanner(System.in);
+    int n = 0;
+    int m = 0;
+    int count = 0;
+    while (sc.hasNext()) {
+        m = sc.nextInt();
+        n = sc.nextInt();
+        if (m == n)
+            count = 1;
+        else {
+            int lastCakeNum = n - m;
+            List<String> keys = new ArrayList<String>();
+            String key = "";
+            List<int[]> list = null;
+            int[] arr = null;
+            for (int j = 0; j < lastCakeNum; j++) {
+                arr = new int[m];
+                arr[0] = j;
+                list = new ArrayList<int[]>();
+                list.addAll(loop(m - 1, lastCakeNum - j, arr, 1));
+
+                for (int[] item : list) {
+                    Arrays.sort(item);
+                    key = join(item, ",");
+                    if (keys.contains(key))
+                        continue;
+                    keys.add(key);
+                }
+            }
+
+            System.out.println(keys.size());
+            for (String item : keys) {
+                System.out.println(item);
+            }
+        }
+    }
+}
+```
