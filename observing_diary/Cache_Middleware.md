@@ -24,5 +24,5 @@
 >
 > .Net Core版本的Channel池告一段落，再看看RabbitTemplate。  
 > 看了一篇对RabbitTemplate池化的博客，这里池化的是RabbitTemplate，针对不同的Exchange，创建一个RabbitTemplate，用ConcurrentHashMap保存信息。  
-> 看完这个博客，我有些疑惑，RabbitTemplate是实现了Channel的池化吗？
-> 
+> 看完这个博客，我有些疑惑，RabbitTemplate是实现了Channel的池化吗？  
+> RabbitTemplate源码 https://github.com/spring-projects/spring-amqp/blob/e3af31bf9a4be561fb3f8f642a3093e8add07d92/spring-rabbit/src/main/java/org/springframework/amqp/rabbit/core/RabbitTemplate.java#L1006
