@@ -59,3 +59,6 @@
 >   * the table starts running out of space.
 >   */
 > ```
+> 捡几句重点的翻译一下，为了适配这种生命周期与线程生命周期等长的局部变量，所以特意写了这个ThreadLocalMap。为了处理庞大且声明周期长的变量，这个Entry类特地对key做了弱引用声明。同时建议用完就remove一下key，避免ThreadLocalMap耗费过多的空间资源。
+>
+> 最后，回到开头的RabbitTemplate，让每个调用RabbitTemplate的线程，都拥有一个自己的Channel，真妙啊！不过如果这个Channel断开连接了这么办？
