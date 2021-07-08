@@ -66,5 +66,7 @@
 
 ## 2021年7月8日
 > 今天跟朋友讨论了一下关于ThreadLocal的内存泄露问题，以及为什么用定义key为弱引用。  
-> 为什么会内存泄漏：如果currentThread在生命ThreadLocal的类中的调用结束后，key会被gc回收；但因为currentThread的生命周期还没结束，导致value还存在强引用关系而被保留下来，这时value就没办法被回收，造成了内存泄漏。所以用完后要及时remove哦！（这里的泄漏指的是value占用的内存无法被回收）
+>
+> 为什么会内存泄漏：如果currentThread在生命ThreadLocal的类中的调用结束后，key会被gc回收；但因为currentThread的生命周期还没结束，导致value还存在强引用关系而被保留下来，这时value就没办法被回收，造成了内存泄漏。所以用完后要及时remove哦！（这里的泄漏指的是value占用的内存无法被回收）   
+>
 > key为弱引用的原因：推测是作者想借用gc之手，主动清一波key。当触发了clean方法或遍历ThreadLocalMap时，直接通过判断key是否为null决定是否remove该Entry，这时候就不用纠结key是否已经过期了！  
