@@ -3,9 +3,11 @@
 动态规划(分月饼): 
 > https://github.com/zxmmichelle/zxmmichelle.github.io/blob/main/algorithm/mooncakes.md
 
+
 ## 观察日记
 RabbitMQ: 
 >https://github.com/zxmmichelle/zxmmichelle.github.io/blob/main/observing_diary/RabbitMQ_Middleware.md  
+
 
 ElasticSearch:
 > https://github.com/zxmmichelle/zxmmichelle.github.io/blob/main/observing_diary/Elasticsearch.md
@@ -25,31 +27,39 @@ ElasticSearch:
 #### 语言
 > 了解CSS, HTML5, JavaScript, TypeScript等前端语言
 
+
 #### 框架
 > ExtJs, JQuery, ZUI
+
 
 ### 后端
 #### 语言
 > 熟悉Java, C#  
 
+
 #### 中间件
 > 熟悉RabbitMQ, Memcached, Quartz  
 > 了解Redis, Elasticsearch
 
+
 #### 数据库
 > 熟悉使用SQL Server, Oracle, PostgreSQL
+
 
 #### 框架
 > Java: SpringBoot, SpringMVC  
 > .Net: .Net Framework, .Net Core
 
+
 #### ORM
 > Java: MyBatis  
 > .Net: SqlSuger, PetaPoco
 
+
 #### IDE
 > Java: Eclipse, STS, Netbeans  
 > .Net: Visual Studio
+
 
 ## 项目经验
 ### Demo_Repo
