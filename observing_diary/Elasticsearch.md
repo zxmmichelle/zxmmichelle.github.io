@@ -26,5 +26,20 @@
 > shard_num=(hash(routing)+hash(_id)%routing_partition_size)%num_primary_shards
 >```
 
+## 2021年9月7日
+> es的全文搜索特性是通过倒排索引实现的（延伸一下postgresql中的Gin索引也是倒排索引）。由于倒排索引的构建十分废时，所以es的倒排索引一旦建立不可更改（postgresql也是建议删除索引重建）。    
+>        
+> 因此es中的update操作，实际上是create+delete操作，旧的doc会被记录到.del文件中。    
+>      
+> 关于es中的名词：index | shard | doc | field | term | token | segment
+>>- index: 索引
+>>- shard: 分片
+>>- doc: 相当于一条记录
+>>- field: doc的各个字段
+>>- term：词，搜索时的一个单位（来自lucene）
+>>- token: term在field中一次出现的信息：包括文本、开始和结束的位移、类型等
+>>- segment: 分段，本质是一个倒排索引
+
+
 
 
