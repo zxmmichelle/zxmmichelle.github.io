@@ -19,3 +19,15 @@
 > 看完这个博客，我有些疑惑，RabbitTemplate是实现了Channel的池化吗？  
 > RabbitTemplate源码 https://github.com/spring-projects/spring-amqp/blob/e3af31bf9a4be561fb3f8f642a3093e8add07d92/spring-rabbit/src/main/java/org/springframework/amqp/rabbit/core/RabbitTemplate.java#L1006
 
+## 2021年12月28日
+> 生产服出了个神奇的bug，其中一个consumer一直没办法正确ack/nack消息。
+> 在开发服模拟的时候，发现从第二条消息开始，无论ack还是nack都会触发这个错误。
+> ```
+> RabbitMQ.Client.Exceptions.AlreadyClosedException: 'Already closed: The AMQP operation was interrupted: AMQP close-reason, initiated by Peer, code=406, text='PRECONDITION_FAILED - unknown delivery tag 1', classId=60, methodId=80'
+> ```
+> 根据大佬们给出的solution，如下图:
+> ![image](https://user-images.githubusercontent.com/43370259/147526688-9771a499-8240-4bad-a322-1b6bacd1ec93.png)  
+> 一一排查Debug，channel number一直是一致，ack/nack的顺序也不是乱序的，啊，那问题在哪里。。  
+> 于是，我从类初始化开始，到执行任务的所有关键步骤都打了断点，发现进入两次Init()！！！  
+> 两次！！两次！！！原来问题在这里T^T，含泪调整了逻辑，终于修复了。。  
+> 再来梳理一下逻辑，逻辑中的消费模式设定为一对一模式，但是是因为两次进了Init()，也就是在同一个channel里加了两个一样的consumer（指业务意义），于是就。。  
