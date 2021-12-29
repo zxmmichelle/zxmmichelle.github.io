@@ -31,3 +31,11 @@
 > 于是，我从类初始化开始，到执行任务的所有关键步骤都打了断点，发现进入两次Init()！！！  
 > 两次！！两次！！！原来问题在这里T^T，含泪调整了逻辑，终于修复了。。  
 > 再来梳理一下逻辑，逻辑中的消费模式设定为一对一模式，但是是因为两次进了Init()，也就是在同一个channel里加了两个一样的consumer（指业务意义），于是就。。  
+
+## 2021年12月29日
+> 对同一个channel添加两个一样的consumer，是work模式。
+> 如果要实现其模式，需要在初始化channel时，加一句代码：  
+> ```C#
+> channel.BasicQos(prefetchSize: 0, prefetchCount: 2, global: false) 
+> // prefetchSize：0为长度不限；global：是否将该设置应用到connection下的所有channel
+> ```
