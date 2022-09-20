@@ -21,3 +21,7 @@
 ## 使用wx.login()需要注意
 > 这个过程可能会刷新登陆态，此时服务器使用code换取的session_key不是加密时使用的session_key，会导致解密失败，所以建议在进行wx.login()之前先使用wx.checkSession进行登陆态检查
 
+## 各类登陆流程
+### 案例1
+> 这个流程适用于基于openid或unionid作为创建账号的情况
+![image](https://user-images.githubusercontent.com/43370259/191156174-b8f772b6-3531-485b-8914-3225d75c9d27.png)
