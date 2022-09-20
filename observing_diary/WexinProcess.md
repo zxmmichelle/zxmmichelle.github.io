@@ -27,7 +27,7 @@
 ![image](https://user-images.githubusercontent.com/43370259/191156174-b8f772b6-3531-485b-8914-3225d75c9d27.png)
 
 ### 案例2
-> 有登陆机制，但用户在游客状态
+> 有登陆机制，但用户在游客状态    
 ![image](https://user-images.githubusercontent.com/43370259/191164950-e0035525-27a3-42d7-8647-f433b83bdd4a.png)
 
 ### 案例3
