@@ -10,7 +10,7 @@
 [ElasticSearch](https://github.com/zxmmichelle/zxmmichelle.github.io/blob/main/observing_diary/Elasticsearch.md)
 
 ## 产品日记
-日常碎碎念(https://github.com/zxmmichelle/zxmmichelle.github.io/blob/main/pm_diary.md)
+[日常碎碎念](https://github.com/zxmmichelle/zxmmichelle.github.io/blob/main/pm_diary.md)
 
 # 关于我
 ## 个人信息
