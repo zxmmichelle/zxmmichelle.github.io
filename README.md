@@ -10,7 +10,7 @@
 [ElasticSearch](https://github.com/zxmmichelle/zxmmichelle.github.io/blob/main/observing_diary/Elasticsearch.md)
 
 ## 产品日记
-
+日常碎碎念(https://github.com/zxmmichelle/zxmmichelle.github.io/blob/main/pm_diary.md)
 
 # 关于我
 ## 个人信息
@@ -18,7 +18,6 @@
 > 毕业学校：五邑大学  
 > 状态：在职(考虑机会)  
 > 工作经验：5年(截至2021年8月8日)  
-> 求职意向：Java开发工程师/架构师
 
 ## 专业经验
 ### 前端
